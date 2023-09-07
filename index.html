@@ -8,12 +8,13 @@
         .grid-container {
             display: grid;
             grid-template-areas:
-                "header header"
-                "aside main"
-                "footer footer";
+                "header"
+                "main"
+                "aside"
+                "footer";
             gap: 1rem;
-            grid-template-columns: 1fr 3fr;
-            grid-template-rows: 1fr 5fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr 2fr 1fr;
         }
         
         .grid-item {
@@ -37,7 +38,18 @@
             grid-area: footer;
             background-color: #ffc9c9;
         }
-        
+
+        @media screen and (min-width: 992px) {
+            
+            .grid-container {
+                grid-template-areas:
+                    "header header"
+                    "aside main"
+                    "footer footer";
+                grid-template-columns: 1fr 3fr;
+            }
+            
+        }
     </style>
 </head>
 <body>
@@ -51,8 +63,7 @@
         <div class="grid-item item-3"><h2>Main</h2></div>
         
         <div class="grid-item item-4"><h2>Footer</h2></div>
-        
     </section>
-    
+
 </body>
 </html>
